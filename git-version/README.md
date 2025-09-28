@@ -19,4 +19,4 @@ Perfect for Android projects and any build setup where you want Git-driven versi
 ---
 
 ## If you like this plugin, don’t forget to star the repo!
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kansalmohit19/GradleVersionPlugin)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kansalmohit19/pilot-plugin/tree/master/git-version)

@@ -8,8 +8,8 @@ group = "io.github.kansalmohit19"
 version = "0.0.1"
 
 gradlePlugin {
-    website.set("https://github.com/kansalmohit19/GradleVersionPlugin")
-    vcsUrl.set("https://github.com/kansalmohit19/GradleVersionPlugin.git")
+    website.set("https://kansalmohit19.github.io/pilot-plugin/git-version")
+    vcsUrl.set("https://github.com/kansalmohit19/pilot-plugin/tree/master/git-version")
 
     plugins {
         create("gitVersionPlugin") {
