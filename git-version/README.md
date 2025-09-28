@@ -2,7 +2,7 @@
 
 [![Gradle](https://img.shields.io/badge/Gradle-7.0%2B-green?logo=gradle)](https://gradle.org/) 
 [![Kotlin](https://img.shields.io/badge/Kotlin-DSL-blue?logo=kotlin)](https://kotlinlang.org/) 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE.md)  
 
 A lightweight Gradle plugin that automatically generates **code** and **name** directly from your Git history.  
 Perfect for Android projects and any build setup where you want Git-driven versioning.
