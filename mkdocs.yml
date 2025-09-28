@@ -1,0 +1,39 @@
+# Project information
+site_name: "GitVersionPlugin"
+site_description: "Documentation for Git Version Plugin"
+site_url: "https://kansalmohit19.github.io/pilot-plugin/"
+
+# Repository info (adds edit/view on GitHub buttons)
+repo_name: "kansalmohit19/pilot-plugin/git-version"
+repo_url: "https://github.com/kansalmohit19/pilot-plugin/tree/master/git-version"
+
+# Theme settings
+theme:
+  name: "material"
+  language: 'en'
+  icon:
+    logo: material/account-tie-hat
+  palette:
+    primary: 'black'
+    accent: 'deep orange'
+  font:
+    text: 'Roboto'
+    code: 'JetBrains Mono'
+
+# Navigation
+nav:
+  - Overview: index.md
+  - Sample Library:
+      - Guide: /git-version/index.md
+      - Usage: /git-version/usage.md
+      - Publishing: /git-version/publishing.md
+  - License: license.md
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
