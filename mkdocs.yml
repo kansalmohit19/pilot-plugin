@@ -1,11 +1,11 @@
 # Project information
-site_name: "GitVersionPlugin"
+site_name: "Git Version Plugin"
 site_description: "Documentation for Git Version Plugin"
 site_url: "https://kansalmohit19.github.io/pilot-plugin/"
 
 # Repository info (adds edit/view on GitHub buttons)
-repo_name: "kansalmohit19/pilot-plugin/git-version"
-repo_url: "https://github.com/kansalmohit19/pilot-plugin/tree/master/git-version"
+repo_name: "pilot-plugin"
+repo_url: "https://github.com/kansalmohit19/pilot-plugin"
 
 # Theme settings
 theme:
@@ -23,10 +23,10 @@ theme:
 # Navigation
 nav:
   - Overview: index.md
-  - Sample Library:
-      - Guide: /git-version/index.md
-      - Usage: /git-version/usage.md
-      - Publishing: /git-version/publishing.md
+  - Git Version Plugin:
+      - Guide: git-version/index.md
+      - Usage: git-version/usage.md
+      - Publishing: git-version/publishing.md
   - License: license.md
 
 # Markdown extensions
