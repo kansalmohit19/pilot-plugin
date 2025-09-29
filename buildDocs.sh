@@ -9,26 +9,32 @@ else
 fi
 
 DOCS_ROOT=docs
-DOCS_ROOT_GIT_VERSION=$DOCS_ROOT/git-version
 
 if [ -d "$DOCS_ROOT" ]; then
   rm -r "$DOCS_ROOT"
 fi
 
 mkdir -p "$DOCS_ROOT"
-mkdir -p "$DOCS_ROOT_GIT_VERSION"
+mkdir -p "$DOCS_ROOT/git-version"
+mkdir -p "$DOCS_ROOT/ktext"
 
 #building docs for pilotplugin
 cp README.md $DOCS_ROOT/index.md
 cp LICENSE.md $DOCS_ROOT/license.md
 
 #building docs for git-version
-cp git-version/README.md $DOCS_ROOT_GIT_VERSION/index.md
-cp LICENSE.md $DOCS_ROOT_GIT_VERSION/license.md
-cp git-version/PUBLISHING.md $DOCS_ROOT_GIT_VERSION/publishing.md
-cp git-version/USAGE.md $DOCS_ROOT_GIT_VERSION/usage.md
+cp git-version/README.md $DOCS_ROOT/git-version/index.md
+cp LICENSE.md $DOCS_ROOT/git-version/license.md
+cp git-version/PUBLISHING.md $DOCS_ROOT/git-version/publishing.md
+cp git-version/USAGE.md $DOCS_ROOT/git-version/usage.md
 
+#building docs for ktext
+cp ktext/README.md $DOCS_ROOT/ktext/index.md
+cp LICENSE.md $DOCS_ROOT/ktext/license.md
+cp ktext/PUBLISHING.md $DOCS_ROOT/ktext/publishing.md
+cp ktext/USAGE.md $DOCS_ROOT/ktext/usage.md
 
-eval sed $SEDOPTION -e 's/LICENSE.md/license/g' "$DOCS_ROOT_GIT_VERSION/index.md"
 eval sed $SEDOPTION -e 's/LICENSE.md/license/g' "$DOCS_ROOT/index.md"
+eval sed $SEDOPTION -e 's/LICENSE.md/license/g' "$DOCS_ROOT/git-version/index.md"
+eval sed $SEDOPTION -e 's/LICENSE.md/license/g' "$DOCS_ROOT/ktext/index.md"
 

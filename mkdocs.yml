@@ -27,6 +27,10 @@ nav:
       - Guide: git-version/index.md
       - Usage: git-version/usage.md
       - Publishing: git-version/publishing.md
+  - KText Plugin:
+      - Guide: ktext/index.md
+      - Usage: ktext/usage.md
+      - Publishing: ktext/publishing.md
   - License: license.md
 
 # Markdown extensions
