@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.github.kansalmohit19"
-version = "0.0.1"
+version = "0.0.2"
 
 gradlePlugin {
     website.set("https://kansalmohit19.github.io/pilot-plugin/git-version")
