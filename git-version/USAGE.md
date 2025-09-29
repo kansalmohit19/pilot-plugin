@@ -24,7 +24,7 @@ android {
 ### 2. Custom task example
 
 ```kotlin
-tasks.register("printGitVersion") {
+tasks.register("generateGitVersion") {
     doLast {
         println("App Version → Code=${gitVersion.code.get()}, Name=${gitVersion.name.get()}")
     }

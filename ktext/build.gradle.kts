@@ -5,19 +5,23 @@ plugins {
 }
 
 group = "io.github.kansalmohit19"
-version = "0.0.2"
+version = "0.0.3"
 
 gradlePlugin {
     website.set("https://kansalmohit19.github.io/pilot-plugin/git-version")
     vcsUrl.set("https://github.com/kansalmohit19/pilot-plugin/tree/master/git-version")
 
     plugins {
-        create("gitVersionPlugin") {
-            id = "io.github.kansalmohit19.git-version"
-            implementationClass = "com.mohitkansal.GitVersionPlugin"
+        create("ktextPlugin") {
+            id = "io.github.kansalmohit19.ktext"
+            implementationClass = "com.mohitkansal.KTextPlugin"
             displayName = "Git Version Plugin"
             description = "A Gradle plugin that automatically generates code and name directly from your Git history."
             tags.set(listOf("android", "versioning", "git"))
         }
     }
+}
+
+dependencies {
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0")
 }
