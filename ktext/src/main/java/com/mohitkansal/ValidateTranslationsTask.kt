@@ -22,6 +22,7 @@ abstract class ValidateTranslationsTask : DefaultTask() {
 
         if (!sourceFile.exists()) {
             throw IllegalArgumentException("Source file not found!")
+            return
         }
 
         if (targetFiles.isEmpty()) {
@@ -34,7 +35,7 @@ abstract class ValidateTranslationsTask : DefaultTask() {
         val sourceFileMap: Map<String, String> = mapper.readValue(sourceFile)
 
         targetFiles.forEach { targetFile ->
-            logger.lifecycle("Validating file: ${targetFile.name}")
+            logger.lifecycle("${targetFile.name}: Validating file")
 
             val targetFileMap: Map<String, String> = mapper.readValue(targetFile)
 
@@ -44,11 +45,11 @@ abstract class ValidateTranslationsTask : DefaultTask() {
             }.keys
 
             if (missingKeys.isNotEmpty() || emptyValues.isNotEmpty()) {
-                logger.lifecycle("Missing keys in ${targetFile.name}: $missingKeys")
-                logger.lifecycle("Empty translations in ${targetFile.name}: $emptyValues")
+                logger.lifecycle("${targetFile.name}: Missing keys $missingKeys")
+                logger.lifecycle("${targetFile.name}: Empty translations $emptyValues")
                 throw RuntimeException("Translation validation failed!")
             }
-            logger.lifecycle("Validation done: ${targetFile.name}\n")
+            logger.lifecycle("${targetFile.name}: Validation done\n")
         }
 
         logger.lifecycle("All translations are valid")

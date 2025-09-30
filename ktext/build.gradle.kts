@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.github.kansalmohit19"
-version = "0.0.3"
+version = "0.0.5"
 
 gradlePlugin {
     website.set("https://kansalmohit19.github.io/pilot-plugin/ktext")
