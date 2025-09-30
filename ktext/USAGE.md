@@ -33,9 +33,13 @@ ktext {
 ```kotlin
 ./gradlew validateTranslations
 
-Validating file: translations.hi.json
-Validation done: translations.hi.json
+translations.es.json: Validating file
+translations.es.json: Missing keys [login]
+translations.es.json: Empty translations [signup]
+    
+./gradlew generateTranslations
 
-Validating file: translations.es.json
-Validation done: translations.es.json
+> Task :androidApp:generateTranslations
+translations.es.json: Generating Translations
+translations.es.json: Translations Generated
 ```

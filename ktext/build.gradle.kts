@@ -5,19 +5,19 @@ plugins {
 }
 
 group = "io.github.kansalmohit19"
-version = "0.0.3"
+version = "0.0.5"
 
 gradlePlugin {
-    website.set("https://kansalmohit19.github.io/pilot-plugin/git-version")
-    vcsUrl.set("https://github.com/kansalmohit19/pilot-plugin/tree/master/git-version")
+    website.set("https://kansalmohit19.github.io/pilot-plugin/ktext")
+    vcsUrl.set("https://github.com/kansalmohit19/pilot-plugin/tree/master/ktext")
 
     plugins {
         create("ktextPlugin") {
             id = "io.github.kansalmohit19.ktext"
             implementationClass = "com.mohitkansal.KTextPlugin"
-            displayName = "Git Version Plugin"
-            description = "A Gradle plugin that automatically generates code and name directly from your Git history."
-            tags.set(listOf("android", "versioning", "git"))
+            displayName = "KText Translation Plugin"
+            description = "A Gradle plugin to validate and manage translations across multiple languages and formats (JSON, strings.xml) in Android and Kotlin Multiplatform projects."
+            tags.set(listOf("android", "kotlin", "kmp", "translations", "localization", "i18n", "multilingual", "json", "strings.xml"))
         }
     }
 }
