@@ -20,25 +20,32 @@ plugins {
 }
 
 ktext {
-    baseFile.setFrom(project.rootProject.file("resources/translations.en.json"))
-    translationFiles.setFrom(
-        project.rootProject.file("resources/translations.hi.json"),
-        project.rootProject.file("resources/translations.es.json")
+    sourceFile.setFrom(project.rootProject.file("resources/translations.en.json"))
+    targetFiles.setFrom(
+        project.rootProject.file("resources/translations.es.json"),
+        project.rootProject.file("resources/translations.hi.json")
     )
 }
 ```
 
-## Example Output
+## Example
 
+### Task
+`./gradlew validateTranslations`
+
+### Output
 ```kotlin
-./gradlew validateTranslations
-
+> Task :androidApp:validateTranslations
 translations.es.json: Validating file
 translations.es.json: Missing keys [login]
 translations.es.json: Empty translations [signup]
-    
-./gradlew generateTranslations
+``` 
 
+### Task 
+`./gradlew generateTranslations`
+
+### Output
+```kotlin
 > Task :androidApp:generateTranslations
 translations.es.json: Generating Translations
 translations.es.json: Translations Generated
