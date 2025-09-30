@@ -8,8 +8,8 @@ class KTextPlugin : Plugin<Project> {
         val ext = project.extensions.create("ktext", KTextExtension::class.java)
 
         project.tasks.register("validateTranslations", ValidateTranslationsTask::class.java) {
-            baseFile.setFrom(ext.baseFile)
-            translationFiles.setFrom(ext.translationFiles)
+            sourceFile.setFrom(ext.sourceFile)
+            targetFiles.setFrom(ext.targetFiles)
         }
     }
 }
