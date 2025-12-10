@@ -1,6 +1,7 @@
 package com.mohitkansal
 
 import org.gradle.api.Project
+import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
 import org.gradle.api.provider.ProviderFactory
 import javax.inject.Inject
@@ -8,25 +9,26 @@ import javax.inject.Inject
 open class GitVersionExtension @Inject constructor(
     private val project: Project, private val providers: ProviderFactory
 ) {
+
+    val versionName: Property<String> = project.objects.property(String::class.java).convention("")
+    val multiplier: Property<Int> = project.objects.property(Int::class.java).convention(1000)
+
+    // Version code calculated from git
     val code: Provider<Int> = providers.provider {
-        runGit("rev-list --count HEAD").toIntOrNull() ?: 1
+        val gitCount = runGit("rev-list --count HEAD").toIntOrNull() ?: 1
+        gitCount * multiplier.get()
     }
 
-    /*val name: Provider<String> = providers.provider {
-        val tag = runGit("describe --tags --abbrev=0", ignoreError = true)
-        val branch = runGit("rev-parse --abbrev-ref HEAD", ignoreError = true)
-
-        when {
-            tag.isNotEmpty() && branch != "HEAD" -> "$tag-SNAPSHOT"
-            tag.isNotEmpty() -> tag
-            else -> "0.1.0-SNAPSHOT"
-        }
-    }*/
-
-    val name: Provider<String> = code.map { versionCode ->
+    // Auto-generated versionName (fallback)
+    private val autoName: Provider<String> = code.map { versionCode ->
         versionCode.toString()
-            //.padStart(6, '0')
-            .map { it.toString() }.joinToString(".")
+            .map { it.toString() }
+            .joinToString(".")
+    }
+
+    // Final version name → userProvided or auto-generated
+    val name: Provider<String> = versionName.flatMap { custom ->
+        if (custom.isBlank()) autoName else providers.provider { custom }
     }
 
     private fun runGit(command: String, ignoreError: Boolean = false): String {

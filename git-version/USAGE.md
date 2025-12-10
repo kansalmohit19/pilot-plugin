@@ -1,6 +1,6 @@
 ## Installation
 
-Add the plugin to your `plugins` block in module build.gradle.kts or in the root build.gradle.kts:
+Add the plugin to your `plugins` block in your module `build.gradle.kts` (or root build.gradle.kts):
 
 ```kotlin
 plugins {
@@ -8,9 +8,23 @@ plugins {
 }
 ```
 
-## Usage
+## Plugin Configuration
 
-### 1. Android example
+### Inside your Gradle module:
+
+```kotlin
+// Optional
+gitVersion {
+    // Optional: multiply git-based versionCode
+    multiplier.set(1000)   // default = 1000
+
+    // Optional: manually override versionName
+    versionName.set("2.1.0")  
+}
+
+```
+
+### Usage in Android
 
 ```kotlin
 android {
@@ -21,20 +35,30 @@ android {
 }
 ```
 
-### 2. Custom task example
+## Built-in Task
+### The plugin automatically provides a task:
 
 ```kotlin
-tasks.register("generateGitVersion") {
-    doLast {
-        println("App Version → Code=${gitVersion.code.get()}, Name=${gitVersion.name.get()}")
-    }
-}
+./gradlew generateGitVersion
 ```
 
-## Example Output
-
 ```kotlin
-./gradlew printGitVersion
+========== VERSION INFO ==========
+Version Code: 65000
+Version Name: 2.0.0
+==================================
+```
 
-GitVersion: code=38, name=3.8
+### Creating Your Own Custom Task
+You can register your own task and use gitVersion values:
+```kotlin
+tasks.register("printVersionInfo") {
+    doLast {
+        println("========== VERSION INFO ==========")
+        println("Version Code: ${gitVersion.code.get()}")
+        println("Version Name: ${gitVersion.name.get()}")
+        println("==================================")
+    }
+}
+
 ```
