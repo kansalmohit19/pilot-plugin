@@ -17,7 +17,10 @@ class GitVersionPlugin : Plugin<Project> {
             doLast {
                 val code = ext.code.get()
                 val name = ext.name.get()
-                project.logger.lifecycle("GitVersion: code=$code, name=$name")
+                project.logger.lifecycle("========== VERSION INFO ==========")
+                project.logger.lifecycle("Version Code: $code")
+                project.logger.lifecycle("Version Name: $name")
+                project.logger.lifecycle("==================================")
             }
         }
     }
