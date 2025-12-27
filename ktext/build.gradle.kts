@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.github.kansalmohit19"
-version = "1.0.1"
+version = "1.0.3"
 
 gradlePlugin {
     website.set("https://kansalmohit19.github.io/pilot-plugin/ktext")
@@ -16,7 +16,7 @@ gradlePlugin {
             id = "io.github.kansalmohit19.ktext"
             implementationClass = "com.mohitkansal.KTextPlugin"
             displayName = "KText Translation Plugin"
-            description = "A Gradle plugin to validate and manage translations across multiple languages and formats (JSON, strings.xml) in Android and Kotlin Multiplatform projects."
+            description = "A lightweight Gradle plugin for validating and managing translations across multiple languages and modules in your project. Supports JSON and `strings.xml` files to ensure all keys are consistent between languages."
             tags.set(listOf("android", "kotlin", "kmp", "translations", "localization", "i18n", "multilingual", "json", "strings.xml"))
         }
     }
