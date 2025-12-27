@@ -45,8 +45,10 @@ pluginManagement {
 
 **2. Publish to Gradle Plugin Portal**
 
-```kotlin   
-./gradlew publishPlugins
+```kotlin
+./gradlew :git-version:publish
+    
+./gradlew publishPlugins (it will publish all of the plugins)
 ```
 
 This uploads the plugin to the official Gradle Plugin Portal. Once published, others can use it with:

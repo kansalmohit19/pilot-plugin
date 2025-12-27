@@ -10,16 +10,12 @@ See the [LICENSE.md](LICENSE.md) file for licensing details.
 
 ### git-version
 
-A Gradle plugin for managing **versionCode** and **versionName** in a consistent and automated way.
+A lightweight Gradle plugin that automatically generates **code** and **name** directly from your Git history. Perfect for Android projects and any build setup where you want Git-driven versioning.
 
-**Latest Release**
-Version: 1.0.1
+For more details, refer to [`git-version/README.md`](git-version/README.md).
 
 ### ktext
 
-A plugin focused on **text and translation management**, designed to simplify localization workflows.
-
-**Latest Release**
-Version: 1.0.1
+A lightweight Gradle plugin for **validating and managing translations** across multiple languages and modules in your project. Supports JSON and `strings.xml` files to ensure all keys are consistent between languages.
 
 For more details, refer to [`ktext/README.md`](ktext/README.md).

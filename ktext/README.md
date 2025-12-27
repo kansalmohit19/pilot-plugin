@@ -7,8 +7,6 @@
 A lightweight Gradle plugin for **validating and managing translations** across multiple languages and modules in your project.  
 Supports JSON and `strings.xml` files to ensure all keys are consistent between languages.
 
----
-
 ## Features
 
 - **Cross-language validation** → Detect missing keys/values between source and target translation files (e.g., `en.json` vs `hi.json`).
@@ -17,7 +15,10 @@ Supports JSON and `strings.xml` files to ensure all keys are consistent between 
 - **Configurable** → Easily point to your translation files in the Gradle build.
 - **Safe defaults** → Skips validation gracefully if files are missing.
 
----
+## Latest Release
+**Version** → 1.0.3
+
+For more details, refer to [`plugins.gradle.org/ktext`](https://plugins.gradle.org/plugin/io.github.kansalmohit19.ktext)
 
 ## If you like this plugin, don’t forget to star the repo!
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kansalmohit19/pilot-plugin/tree/master/ktext)
